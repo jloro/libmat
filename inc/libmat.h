@@ -6,12 +6,16 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:25:02 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:53:53 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/12 13:53:40 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBMAT_H
 # define LIBMAT_H
+
+# define X_AXIS 0
+# define Y_AXIS 1
+# define Z_AXIS 2
 
 typedef struct		s_vec4
 {
@@ -59,6 +63,7 @@ t_mat4				ft_mat4_trans(t_mat4 a, const float x, const float y,
 						const float z);
 t_mat4				ft_mat4_scale(t_mat4 a, const float x, const float y,
 						const float z);
+t_mat4				ft_mat4_rot(t_mat4 a, const float angle, const int axis);
 
 
 t_vec4				ft_mat4_mulvec4(const t_mat4 a, const t_vec4 b);

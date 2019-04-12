@@ -23,6 +23,7 @@ SRC_FILES = radtodeg.c \
 			ft_mat4_mulvec4.c \
 			ft_mat4_trans.c \
 			ft_mat4_scale.c \
+			ft_mat4_rot.c \
 
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
