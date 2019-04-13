@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 13:52:23 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 14:23:25 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/13 16:54:39 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 #include <math.h>
 #include <string.h>
 
-void		modif_ret(t_mat4 *a, int *i, const float angle)
+void		calc_rot(t_mat4 *a, const t_vec3 axis, const float * coef)
 {
-	a->m[i[0]] = cos(angle);
-	a->m[i[1]] = -sin(angle);
-	a->m[i[2]] = sin(angle);
-	a->m[i[3]] = cos(angle);
+	a->m[0] = coef[2] * axis.x * axis.x + coef[0];
+	a->m[1] = coef[2] * axis.x * axis.y - coef[1] * axis.z;
+	a->m[2] = coef[2] * axis.x * axis.z + coef[1] * axis.y;
+	a->m[4] = coef[2] * axis.x * axis.y + coef[1] * axis.z;
+	a->m[5] = coef[2] * axis.y * axis.y + coef[0];
+	a->m[6] = coef[2] * axis.y * axis.z - coef[1] * axis.x;
+	a->m[8] = coef[2] * axis.x * axis.z - coef[0] * axis.y;
+	a->m[9] = coef[2] * axis.y * axis.z + coef[1] * axis.x;
+	a->m[10] = coef[2] * axis.z * axis.z + coef[0];
 }
 
-t_mat4		ft_mat4_rot(t_mat4 a, const float angle, const int axis)
+t_mat4		ft_mat4_rot(t_mat4 a, const float angle, const t_vec3 axis)
 {
 	t_mat4	ret;
-	int		index[4];
+	float	coef[3];
 
+	coef[0] = cos(angle);
+	coef[1] = sin(angle);
+	coef[2] = 1 - coef[0];
 	ret = ft_mat4_set(1.0f, 1);
-	if (axis == X_AXIS)
-		modif_ret(&ret, memcpy(index, ((int[4]){5, 6, 9, 10}), 4 * sizeof(int)), angle);
-	else if (axis == Z_AXIS)
-		modif_ret(&ret, memcpy(index, ((int[4]){0, 1, 4, 5}), 4 * sizeof(int)), angle);
-	else
-		modif_ret(&ret, memcpy(index, ((int[4]){0, 2, 8, 10}), 4 * sizeof(int)), angle);
+	calc_rot(&ret, axis, coef);
 	ret = ft_mat4_mul(ret, a);
 	return (ret);
 }

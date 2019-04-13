@@ -4,6 +4,7 @@ FLAGS = -Wall -Wextra -Werror
 NAME = libmat.a
 SRC_FILES = radtodeg.c \
 			degtorad.c \
+			ft_vec3_set.c \
 			ft_vec4_set.c \
 			ft_vec4_add.c \
 			ft_vec4_addf.c \
