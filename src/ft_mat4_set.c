@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:24:37 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 11:32:17 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/13 18:47:09 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_mat4		ft_mat4_set(float a, int identity)
 		if (identity)
 			ret.m[i] = i % 5 == 0 ? a : 0;
 		else
-			ret.m[i] = i;
+			ret.m[i] = a;
 		i++;
 	}
 	return (ret);
