@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec4_set.c                                      :+:      :+:    :+:   */
+/*   vec3_norm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 12:34:55 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:36:00 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/14 14:37:01 by jules             #+#    #+#             */
+/*   Updated: 2019/04/14 14:38:49 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
+#include <math.h>
 
-t_vec4		ft_vec4_set(const float x, const float y, const float z,
-				const float w)
+float	vec3_norm(const t_vec3 a)
 {
-	t_vec4	ret;
-
-	ret.x = x;
-	ret.y = y;
-	ret.z = z;
-	ret.w = w;
-	return (ret);
+	return (sqrt(a.x * a.x + a.y * a.y + a.z * a.z));
 }

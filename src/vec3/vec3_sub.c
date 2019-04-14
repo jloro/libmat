@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_subvec4f.c                                      :+:      :+:    :+:   */
+/*   vec3_sub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 10:33:52 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:23:02 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/14 14:13:52 by jules             #+#    #+#             */
+/*   Updated: 2019/04/14 14:15:21 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_vec4		ft_vec4_subf(const t_vec4 a, const float b)
+t_vec3		vec3_sub(const t_vec3 a, const t_vec3 b)
 {
-	t_vec4	ret;
+	t_vec3	ret;
 
-	ret.x = a.x - b;
-	ret.y = a.y - b;
-	ret.z = a.z - b;
-	ret.w = a.w - b;
+	ret.x = a.x - b.x;
+	ret.y = a.y - b.y;
+	ret.z = a.z - b.z;
 	return (ret);
 }

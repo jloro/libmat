@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotatevec4z.c                                   :+:      :+:    :+:   */
+/*   mat4_mul.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 10:53:28 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:22:56 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 11:45:14 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:54:56 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
-#include <math.h>
 
-t_vec4		ft_vec4_rotate_z(t_vec4 *a, const float theta)
+t_mat4		mat4_mul(const t_mat4 a, const t_mat4 b)
 {
-	a->x = cos(theta) * a->x - sin(theta) * a->y;
-	a->y = sin(theta) * a->x + cos(theta) * a->y;
-	return (*a);
+	t_mat4	ret;
+	int		i;
+
+	i = 0;
+	while (i < 16)
+	{
+		ret.m[i] = a.m[i / 4 * 4] * b.m[i % 4] + a.m[i / 4 * 4 + 1] * b.m[i % 4 + 4]
+			+ a.m[i / 4 * 4 + 2] * b.m[i % 4 + 8] + a.m[i / 4 * 4 + 3] * b.m[i % 4 + 12];
+		i++;
+	}
+	return (ret);
 }

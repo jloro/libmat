@@ -2,29 +2,45 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
 NAME = libmat.a
-SRC_FILES = radtodeg.c \
-			degtorad.c \
-			ft_vec3_set.c \
-			ft_vec4_set.c \
-			ft_vec4_add.c \
-			ft_vec4_addf.c \
-			ft_vec4_sub.c \
-			ft_vec4_subf.c \
-			ft_vec4_mulf.c \
-			ft_vec4_rotate_x.c \
-			ft_vec4_rotate_y.c \
-			ft_vec4_rotate_z.c \
-			ft_mat4_set.c \
-			ft_mat4_add.c \
-			ft_mat4_addf.c \
-			ft_mat4_sub.c \
-			ft_mat4_subf.c \
-			ft_mat4_mul.c \
-			ft_mat4_mulf.c \
-			ft_mat4_mulvec4.c \
-			ft_mat4_trans.c \
-			ft_mat4_scale.c \
-			ft_mat4_rot.c \
+SRC_FILES += 	utils/radtodeg.c \
+		utils/degtorad.c \
+
+SRC_FILES +=	vec3/vec3_set.c \
+		vec3/vec3_add.c \
+		vec3/vec3_addf.c \
+		vec3/vec3_sub.c \
+		vec3/vec3_subf.c \
+		vec3/vec3_mulf.c \
+		vec3/vec3_dot_product.c \
+		vec3/vec3_cross_product.c \
+		vec3/vec3_norm.c \
+		vec3/vec3_normalize.c \
+		vec3/vec3_rotate_x.c \
+		vec3/vec3_rotate_y.c \
+		vec3/vec3_rotate_z.c \
+
+SRC_FILES += 	vec4/vec4_set.c \
+		vec4/vec4_add.c \
+		vec4/vec4_addf.c \
+		vec4/vec4_sub.c \
+		vec4/vec4_subf.c \
+		vec4/vec4_mulf.c \
+		vec4/vec4_rotate_x.c \
+		vec4/vec4_rotate_y.c \
+		vec4/vec4_rotate_z.c \
+
+SRC_FILES += 	mat4/mat4_set.c \
+		mat4/mat4_add.c \
+		mat4/mat4_addf.c \
+		mat4/mat4_sub.c \
+		mat4/mat4_subf.c \
+		mat4/mat4_mul.c \
+		mat4/mat4_mulf.c \
+		mat4/mat4_mulvec4.c \
+		mat4/mat4_trans.c \
+		mat4/mat4_scale.c \
+		mat4/mat4_rot.c \
+		mat4/mat4_look_at.c \
 
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
@@ -47,7 +63,7 @@ $(NAME) : $(OBJS)
 	@echo "$(NAME) compiled ✓"
 
 $(OBJ_PATH)%.o : $(SRC_PATH)%.c
-	@mkdir -p $(OBJ_PATH)
+	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)utils $(OBJ_PATH)vec3 $(OBJ_PATH)vec4 $(OBJ_PATH)mat4
 	@$(CC) $(FLAGS) $(INCS) -o $@ -c $<
 	@echo "$@ created ✓"
 

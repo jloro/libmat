@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:25:02 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/13 16:53:05 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/14 15:32:38 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,37 +44,51 @@ float				degtorad(float deg);
 ** Vectors
 */
 
-t_vec4				ft_vec4_set(const float x, const float y, const float z,
-						const float w);
-t_vec4				ft_vec4_add(const t_vec4 a, const t_vec4 b);
-t_vec4				ft_vec4_addf(const t_vec4 a, const float b);
-t_vec4				ft_vec4_sub(const t_vec4 a, const t_vec4 b);
-t_vec4				ft_vec4_subf(const t_vec4 a, const float b);
-t_vec4				ft_vec4_mulf(const t_vec4 a, const float b);
-t_vec4				ft_vec4_rotate_x(t_vec4 *a, const float theta);
-t_vec4				ft_vec4_rotate_y(t_vec4 *a, const float theta);
-t_vec4				ft_vec4_rotate_z(t_vec4 *a, const float theta);
+t_vec4				vec4_set(const float x, const float y, const float z,
+				     	const float w);
+t_vec4				vec4_add(const t_vec4 a, const t_vec4 b);
+t_vec4				vec4_addf(const t_vec4 a, const float b);
+t_vec4				vec4_sub(const t_vec4 a, const t_vec4 b);
+t_vec4				vec4_subf(const t_vec4 a, const float b);
+t_vec4				vec4_mulf(const t_vec4 a, const float b);
+t_vec4				*vec4_rotate_x(t_vec4 *a, const float theta);
+t_vec4				*vec4_rotate_y(t_vec4 *a, const float theta);
+t_vec4				*vec4_rotate_z(t_vec4 *a, const float theta);
 
 
-t_vec3				ft_vec3_set(const float x, const float y, const float z);
+t_vec3				vec3_set(const float x, const float y, const float z);
+t_vec3				vec3_add(const t_vec3 a, const t_vec3 b);
+t_vec3				vec3_addf(const t_vec3 a, const float b);
+t_vec3				vec3_sub(const t_vec3 a, const t_vec3 b);
+t_vec3				vec3_subf(const t_vec3 a, const float b);
+t_vec3				vec3_mulf(const t_vec3 a, const float b);
+t_vec3				*vec3_rotate_x(t_vec3 *a, const float theta);
+t_vec3				*vec3_rotate_y(t_vec3 *a, const float theta);
+t_vec3				*vec3_rotate_z(t_vec3 *a, const float theta);
+float				vec3_dot_product(const t_vec3 a, const t_vec3 b);
+float				vec3_norm(const t_vec3 a);
+t_vec3				vec3_normalize(const t_vec3 a);
+t_vec3				vec3_cross_product(const t_vec3 a, const t_vec3 b);
 
 /*
 ** Matrix
 */
 
-t_mat4				ft_mat4_set(float a, int identity);
-t_mat4				ft_mat4_add(const t_mat4 a, const t_mat4 b);
-t_mat4				ft_mat4_addf(const t_mat4 a, const float b);
-t_mat4				ft_mat4_sub(const t_mat4 a, const t_mat4 b);
-t_mat4				ft_mat4_subf(const t_mat4 a, const float b);
-t_mat4				ft_mat4_mul(const t_mat4 a, const t_mat4 b);
-t_mat4				ft_mat4_mulf(const t_mat4 a, const float b);
-t_mat4				ft_mat4_trans(t_mat4 a, const float x, const float y,
-						const float z);
-t_mat4				ft_mat4_scale(t_mat4 a, const float x, const float y,
-						const float z);
-t_mat4				ft_mat4_rot(t_mat4 a, const float angle, const t_vec3 axis);
+t_mat4				mat4_set(float a, int identity);
+t_mat4				mat4_add(const t_mat4 a, const t_mat4 b);
+t_mat4				mat4_addf(const t_mat4 a, const float b);
+t_mat4				mat4_sub(const t_mat4 a, const t_mat4 b);
+t_mat4				mat4_subf(const t_mat4 a, const float b);
+t_mat4				mat4_mul(const t_mat4 a, const t_mat4 b);
+t_mat4				mat4_mulf(const t_mat4 a, const float b);
+t_mat4				mat4_trans(t_mat4 a, const float x, const float y,
+				     	const float z);
+t_mat4				mat4_scale(t_mat4 a, const float x, const float y,
+				     	const float z);
+t_mat4				mat4_rot(t_mat4 a, const float angle, const t_vec3 axis);
+t_mat4				mat4_look_at(const t_vec3 up, const t_vec3 target,
+                        const t_vec3 pos);
 
 
-t_vec4				ft_mat4_mulvec4(const t_mat4 a, const t_vec4 b);
+t_vec4				mat4_mulvec4(const t_mat4 a, const t_vec4 b);
 #endif

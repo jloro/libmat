@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addvec4.c                                       :+:      :+:    :+:   */
+/*   vec3_rotate_x.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 10:21:29 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 11:25:39 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/14 14:17:12 by jules             #+#    #+#             */
+/*   Updated: 2019/04/14 14:42:11 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
+#include <math.h>
 
-t_vec4		ft_vec4_add(const t_vec4 a, const t_vec4 b)
+t_vec3		*vec3_rotate_x(t_vec3 *a, const float theta)
 {
-	t_vec4	ret;
-
-	ret.x = a.x + b.x;
-	ret.y = a.y + b.y;
-	ret.z = a.z + b.z;
-	ret.w = a.w + b.w;
-	return (ret);
+	a->y = cos(theta) * a->y - sin(theta) * a->z;
+	a->z = sin(theta) * a->y + cos(theta) * a->z;
+	return (a);
 }

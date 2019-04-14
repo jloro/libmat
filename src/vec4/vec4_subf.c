@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat4_addf.c                                     :+:      :+:    :+:   */
+/*   vec4_subf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 11:35:36 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:22:27 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 10:33:52 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 14:01:56 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		ft_mat4_addf(const t_mat4 a, const float b)
+t_vec4		vec4_subf(const t_vec4 a, const float b)
 {
-	t_mat4	ret;
-	int		i;
+	t_vec4	ret;
 
-	i = 0;
-	while (i < 16)
-	{
-		ret.m[i] = a.m[i] + b;
-		i++;
-	}
+	ret.x = a.x - b;
+	ret.y = a.y - b;
+	ret.z = a.z - b;
+	ret.w = a.w - b;
 	return (ret);
 }

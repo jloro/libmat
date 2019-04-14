@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat4_trans.c                                    :+:      :+:    :+:   */
+/*   vec4_sub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 12:42:08 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 15:24:21 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 10:30:32 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 14:01:46 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		ft_mat4_trans(t_mat4 a, const float x, const float y,
-				const float z)
+t_vec4		vec4_sub(const t_vec4 a, const t_vec4 b)
 {
-	t_mat4	ret;
+	t_vec4	ret;
 
-	ret = ft_mat4_set(1.0f, 1);
-	ret.m[3] = x;
-	ret.m[7] = y;
-	ret.m[11] = z;
-	ret = ft_mat4_mul(ret, a);
+	ret.x = a.x - b.x;
+	ret.y = a.y - b.y;
+	ret.z = a.z - b.z;
+	ret.w = a.w - b.w;
 	return (ret);
 }

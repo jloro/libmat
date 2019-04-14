@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addvec4f.c                                      :+:      :+:    :+:   */
+/*   vec4_mulf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 10:26:56 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:22:41 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 10:35:18 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:56:36 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_vec4		ft_vec4_addf(const t_vec4 a, const float b)
+t_vec4		vec4_mulf(const t_vec4 a, float b)
 {
 	t_vec4	ret;
 
-	ret.x = a.x + b;
-	ret.y = a.y + b;
-	ret.z = a.z + b;
-	ret.w = a.w + b;
+	ret.x = a.x * b;
+	ret.y = a.y * b;
+	ret.z = a.z * b;
+	ret.w = a.w * b;
 	return (ret);
 }

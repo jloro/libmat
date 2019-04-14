@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat4_scale.c                                    :+:      :+:    :+:   */
+/*   vec3_normalize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 12:54:21 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 14:34:20 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/14 14:38:57 by jules             #+#    #+#             */
+/*   Updated: 2019/04/14 15:03:02 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		ft_mat4_scale(t_mat4 a, const float x, const float y,
-				const float z)
+t_vec3		vec3_normalize(t_vec3 a)
 {
-	t_mat4	ret;
+	float	norm;
 
-	ret = ft_mat4_set(1.0f, 1);
-	ret.m[0] = x;
-	ret.m[5] = y;
-	ret.m[10] = z;
-	ret = ft_mat4_mul(ret, a);
-	return (ret);
+	norm = vec3_norm(a);
+	a.x = a.x / norm;
+	a.y = a.y / norm;
+	a.z = a.z / norm;
+	return (a);
 }

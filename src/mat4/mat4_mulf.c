@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mulvec4f.c                                      :+:      :+:    :+:   */
+/*   mat4_mulf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 10:35:18 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 11:26:05 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 12:16:05 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:55:02 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_vec4		ft_vec4_mulf(const t_vec4 a, float b)
+t_mat4		mat4_mulf(const t_mat4 a, const float b)
 {
-	t_vec4	ret;
+	t_mat4	ret;
+	int		i;
 
-	ret.x = a.x * b;
-	ret.y = a.y * b;
-	ret.z = a.z * b;
-	ret.w = a.w * b;
+	i = 0;
+	while (i < 16)
+	{
+		ret.m[i] = a.m[i] * b;
+		i++;
+	}
 	return (ret);
 }

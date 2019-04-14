@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec3_set.c                                      :+:      :+:    :+:   */
+/*   vec3_dot_product.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jloro <jloro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/13 16:53:17 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/13 16:54:06 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/14 14:33:02 by jules             #+#    #+#             */
+/*   Updated: 2019/04/14 14:35:17 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_vec3		ft_vec3_set(const float x, const float y, const float z)
+float	vec3_dot_product(const t_vec3 a, const t_vec3 b)
 {
-	t_vec3	ret;
-
-	ret.x = x;
-	ret.y = y;
-	ret.z = z;
-	return (ret);
+	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }

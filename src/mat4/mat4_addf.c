@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat4_set.c                                      :+:      :+:    :+:   */
+/*   mat4_addf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 11:24:37 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/13 18:47:09 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 11:35:36 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:54:50 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		ft_mat4_set(float a, int identity)
+t_mat4		mat4_addf(const t_mat4 a, const float b)
 {
 	t_mat4	ret;
 	int		i;
@@ -20,10 +20,7 @@ t_mat4		ft_mat4_set(float a, int identity)
 	i = 0;
 	while (i < 16)
 	{
-		if (identity)
-			ret.m[i] = i % 5 == 0 ? a : 0;
-		else
-			ret.m[i] = a;
+		ret.m[i] = a.m[i] + b;
 		i++;
 	}
 	return (ret);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat4_sub.c                                      :+:      :+:    :+:   */
+/*   mat4_subf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 11:37:41 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 11:40:26 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 11:41:32 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:55:58 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		ft_mat4_sub(const t_mat4 a, const t_mat4 b)
+t_mat4		mat4_subf(const t_mat4 a, const float b)
 {
 	t_mat4	ret;
 	int		i;
@@ -20,7 +20,7 @@ t_mat4		ft_mat4_sub(const t_mat4 a, const t_mat4 b)
 	i = 0;
 	while (i < 16)
 	{
-		ret.m[i] = a.m[i] - b.m[i];
+		ret.m[i] = a.m[i] - b;
 		i++;
 	}
 	return (ret);

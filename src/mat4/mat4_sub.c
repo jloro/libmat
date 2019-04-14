@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_subvec4.c                                       :+:      :+:    :+:   */
+/*   mat4_sub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 10:30:32 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 11:26:32 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 11:37:41 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:55:53 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_vec4		ft_vec4_sub(const t_vec4 a, const t_vec4 b)
+t_mat4		mat4_sub(const t_mat4 a, const t_mat4 b)
 {
-	t_vec4	ret;
+	t_mat4	ret;
+	int		i;
 
-	ret.x = a.x - b.x;
-	ret.y = a.y - b.y;
-	ret.z = a.z - b.z;
-	ret.w = a.w - b.w;
+	i = 0;
+	while (i < 16)
+	{
+		ret.m[i] = a.m[i] - b.m[i];
+		i++;
+	}
 	return (ret);
 }

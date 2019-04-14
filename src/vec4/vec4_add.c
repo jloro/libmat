@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat4_add.c                                      :+:      :+:    :+:   */
+/*   vec4_add.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 11:33:53 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:18:27 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 10:21:29 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:56:25 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		ft_mat4_add(const t_mat4 a, const t_mat4 b)
+t_vec4		vec4_add(const t_vec4 a, const t_vec4 b)
 {
-	t_mat4	ret;
-	int		i;
+	t_vec4	ret;
 
-	i = 0;
-	while (i < 16)
-	{
-		ret.m[i] = a.m[i] + b.m[i];
-		i++;
-	}
+	ret.x = a.x + b.x;
+	ret.y = a.y + b.y;
+	ret.z = a.z + b.z;
+	ret.w = a.w + b.w;
 	return (ret);
 }

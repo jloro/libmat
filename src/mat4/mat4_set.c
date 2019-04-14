@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotatevec4y.c                                   :+:      :+:    :+:   */
+/*   mat4_set.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 10:51:50 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:22:52 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 11:24:37 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:55:46 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
-#include <math.h>
 
-t_vec4		ft_vec4_rotate_y(t_vec4 *a, const float theta)
+t_mat4		mat4_set(float a, int identity)
 {
-	a->x = cos(theta) * a->x + sin(theta) * a->z;
-	a->z = -sin(theta) * a->x + cos(theta) * a->z;
-	return (*a);
+	t_mat4	ret;
+	int		i;
+
+	i = 0;
+	while (i < 16)
+	{
+		if (identity)
+			ret.m[i] = i % 5 == 0 ? a : 0;
+		else
+			ret.m[i] = a;
+		i++;
+	}
+	return (ret);
 }

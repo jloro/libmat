@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat4_subf.c                                     :+:      :+:    :+:   */
+/*   mat4_mulvec4.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 11:41:32 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/12 12:22:37 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/12 12:23:22 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/14 13:55:10 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		ft_mat4_subf(const t_mat4 a, const float b)
+t_vec4		mat4_mulvec4(const t_mat4 a, const t_vec4 b)
 {
-	t_mat4	ret;
-	int		i;
+	t_vec4	ret;
 
-	i = 0;
-	while (i < 16)
-	{
-		ret.m[i] = a.m[i] - b;
-		i++;
-	}
+	ret.x = a.m[0] * b.x + a.m[1] * b.y + a.m[2] * b.z + a.m[3] * b.w;
+	ret.y = a.m[4] * b.x + a.m[5] * b.y + a.m[6] * b.z + a.m[7] * b.w;
+	ret.z = a.m[8] * b.x + a.m[9] * b.y + a.m[10] * b.z + a.m[11] * b.w;
+	ret.w = a.m[12] * b.x + a.m[13] * b.y + a.m[14] * b.z + a.m[15] * b.w;
 	return (ret);
 }
