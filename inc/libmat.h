@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:25:02 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/14 15:32:38 by jules            ###   ########.fr       */
+/*   Updated: 2019/04/15 16:35:38 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ float				vec3_dot_product(const t_vec3 a, const t_vec3 b);
 float				vec3_norm(const t_vec3 a);
 t_vec3				vec3_normalize(const t_vec3 a);
 t_vec3				vec3_cross_product(const t_vec3 a, const t_vec3 b);
+t_vec3				vec3_neg(t_vec3 *vec);
 
 /*
 ** Matrix
@@ -88,7 +89,7 @@ t_mat4				mat4_scale(t_mat4 a, const float x, const float y,
 t_mat4				mat4_rot(t_mat4 a, const float angle, const t_vec3 axis);
 t_mat4				mat4_look_at(const t_vec3 up, const t_vec3 target,
                         const t_vec3 pos);
-
+t_mat4				mat4_transpose(t_mat4 *a);
 
 t_vec4				mat4_mulvec4(const t_mat4 a, const t_vec4 b);
 #endif

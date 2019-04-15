@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec3_cross_product.c                               :+:      :+:    :+:   */
+/*   mat4_transpose.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 14:54:25 by jules             #+#    #+#             */
-/*   Updated: 2019/04/15 13:07:00 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/15 16:35:52 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/15 16:45:47 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_vec3		vec3_cross_product(const t_vec3 a, const t_vec3 b)
+t_mat4		mat4_transpose(t_mat4 *a)
 {
-	t_vec3	ret;
+	t_mat4	new;
+	int		i;
+	int		j;
 
-	ret.x = a.y * b.z - a.z * b.y;
-	ret.y = a.z * b.x - a.x * b.z;
-	ret.z = a.x * a.y - a.y * a.x;
-	return (ret);
+	new = mat4_set(1.0f, 1);
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			new.m[i * 4 + j] = a->m[j * 4 + i];
+			j++;
+		}
+		i++;
+	}
+	*a = new;
+	return (*a);
 }

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec3_cross_product.c                               :+:      :+:    :+:   */
+/*   vec3_neg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 14:54:25 by jules             #+#    #+#             */
-/*   Updated: 2019/04/15 13:07:00 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/15 12:02:32 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/15 12:03:54 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_vec3		vec3_cross_product(const t_vec3 a, const t_vec3 b)
+t_vec3		vec3_neg(t_vec3 *vec)
 {
-	t_vec3	ret;
-
-	ret.x = a.y * b.z - a.z * b.y;
-	ret.y = a.z * b.x - a.x * b.z;
-	ret.z = a.x * a.y - a.y * a.x;
-	return (ret);
+	vec->x = -vec->x;
+	vec->y = -vec->y;
+	vec->z = -vec->z;
+	return (*vec);
 }
