@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:25:02 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/15 16:35:38 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/17 15:57:00 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ t_mat4				mat4_rot(t_mat4 a, const float angle, const t_vec3 axis);
 t_mat4				mat4_look_at(const t_vec3 up, const t_vec3 target,
                         const t_vec3 pos);
 t_mat4				mat4_transpose(t_mat4 *a);
+t_mat4				mat4_cpy(const t_mat4 a);
 
 t_vec4				mat4_mulvec4(const t_mat4 a, const t_vec4 b);
 #endif

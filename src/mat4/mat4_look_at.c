@@ -6,14 +6,14 @@
 /*   By: jules <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 15:12:46 by jules             #+#    #+#             */
-/*   Updated: 2019/04/15 14:14:13 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/16 15:25:08 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
 void			init_cam(t_mat4 *cam, const t_vec3 up,const t_vec3 target,
-		t_vec3 pos)
+		const t_vec3 pos)
 {
 	t_vec3		cameraUp;
 	t_vec3		cameraRight;
@@ -21,7 +21,7 @@ void			init_cam(t_mat4 *cam, const t_vec3 up,const t_vec3 target,
 
 	cameraDir = vec3_normalize(vec3_sub(pos, target));
 	cameraRight = vec3_normalize(vec3_cross_product(up, cameraDir));
-	cameraUp = vec3_cross_product(cameraDir, cameraRight);
+	cameraUp = vec3_normalize(vec3_cross_product(cameraDir, cameraRight));
 	cam->m[0] = cameraRight.x;
 	cam->m[1] = cameraUp.x;
 	cam->m[2] = cameraDir.x;

@@ -43,6 +43,7 @@ SRC_FILES += 	mat4/mat4_set.c \
 		mat4/mat4_rot.c \
 		mat4/mat4_look_at.c \
 		mat4/mat4_transpose.c \
+		mat4/mat4_cpy.c \
 
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
