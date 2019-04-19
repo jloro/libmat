@@ -19,6 +19,7 @@ SRC_FILES +=	vec3/vec3_set.c \
 		vec3/vec3_rotate_y.c \
 		vec3/vec3_rotate_z.c \
 		vec3/vec3_neg.c \
+		vec3/vec3_is_null.c \
 
 SRC_FILES += 	vec4/vec4_set.c \
 		vec4/vec4_add.c \
@@ -41,7 +42,6 @@ SRC_FILES += 	mat4/mat4_set.c \
 		mat4/mat4_trans.c \
 		mat4/mat4_scale.c \
 		mat4/mat4_rot.c \
-		mat4/mat4_look_at.c \
 		mat4/mat4_transpose.c \
 		mat4/mat4_cpy.c \
 
