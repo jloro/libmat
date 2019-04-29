@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 13:52:23 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/14 13:55:23 by jules            ###   ########.fr       */
+/*   Updated: 2019/04/29 17:33:30 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <math.h>
 #include <string.h>
 
-void		calc_rot(t_mat4 *a, const t_vec3 axis, const float * coef)
+void		calc_rot(t_mat4 *a, const t_vec3 axis, const float *coef)
 {
 	a->m[0] = coef[2] * axis.x * axis.x + coef[0];
 	a->m[1] = coef[2] * axis.x * axis.y - coef[1] * axis.z;
