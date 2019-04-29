@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:25:02 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/19 14:20:04 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/29 14:10:30 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,14 @@ typedef struct		s_mat4
 	float			m[16];
 }					t_mat4;
 
-float				radtodeg(float rad);
-float				degtorad(float deg);
+/*
+** Utils
+*/
 
+float				radtodeg(const float rad);
+float				degtorad(const float deg);
+float				maxf(const float a, const float b);
+float				minf(const float a, const float b);
 /*
 ** Vectors
 */
@@ -83,10 +88,8 @@ t_mat4				mat4_sub(const t_mat4 a, const t_mat4 b);
 t_mat4				mat4_subf(const t_mat4 a, const float b);
 t_mat4				mat4_mul(const t_mat4 a, const t_mat4 b);
 t_mat4				mat4_mulf(const t_mat4 a, const float b);
-t_mat4				mat4_trans(t_mat4 a, const float x, const float y,
-				     	const float z);
-t_mat4				mat4_scale(t_mat4 a, const float x, const float y,
-				     	const float z);
+t_mat4				mat4_trans(t_mat4 a, const t_vec3 b);
+t_mat4				mat4_scale(t_mat4 a, const t_vec3 b);
 t_mat4				mat4_rot(t_mat4 a, const float angle, const t_vec3 axis);
 t_mat4				mat4_transpose(t_mat4 *a);
 t_mat4				mat4_cpy(const t_mat4 a);

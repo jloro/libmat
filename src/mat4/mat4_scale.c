@@ -6,21 +6,20 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 12:54:21 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/14 13:55:33 by jules            ###   ########.fr       */
+/*   Updated: 2019/04/29 14:09:54 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		mat4_scale(t_mat4 a, const float x, const float y,
-				const float z)
+t_mat4		mat4_scale(t_mat4 a, const t_vec3 b)
 {
 	t_mat4	ret;
 
 	ret = mat4_set(1.0f, 1);
-	ret.m[0] = x;
-	ret.m[5] = y;
-	ret.m[10] = z;
+	ret.m[0] = b.x;
+	ret.m[5] = b.y;
+	ret.m[10] = b.z;
 	ret = mat4_mul(ret, a);
 	return (ret);
 }

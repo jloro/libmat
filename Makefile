@@ -4,6 +4,8 @@ FLAGS = -Wall -Wextra -Werror
 NAME = libmat.a
 SRC_FILES += 	utils/radtodeg.c \
 		utils/degtorad.c \
+		utils/minf.c \
+		utils/maxf.c \
 
 SRC_FILES +=	vec3/vec3_set.c \
 		vec3/vec3_add.c \

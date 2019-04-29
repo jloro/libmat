@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mat4_trans.c                                       :+:      :+:    :+:   */
+/*   minf.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 12:42:08 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/29 14:11:07 by jloro            ###   ########.fr       */
+/*   Created: 2019/04/29 11:36:16 by jloro             #+#    #+#             */
+/*   Updated: 2019/04/29 11:38:02 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmat.h"
 
-t_mat4		mat4_trans(t_mat4 a, const t_vec3 b)
+float		minf(const float a, const float b)
 {
-	t_mat4	ret;
-
-	ret = mat4_set(1.0f, 1);
-	ret.m[3] = b.x;
-	ret.m[7] = b.y;
-	ret.m[11] = b.z;
-	ret = mat4_mul(ret, a);
-	return (ret);
+	return (a < b ? a : b);
 }
