@@ -6,7 +6,7 @@
 /*   By: jloro <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:25:02 by jloro             #+#    #+#             */
-/*   Updated: 2019/04/29 14:10:30 by jloro            ###   ########.fr       */
+/*   Updated: 2019/04/30 12:00:19 by jloro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,13 @@ float				radtodeg(const float rad);
 float				degtorad(const float deg);
 float				maxf(const float a, const float b);
 float				minf(const float a, const float b);
+
 /*
-** Vectors
+** Vec4
 */
 
 t_vec4				vec4_set(const float x, const float y, const float z,
-				     	const float w);
+						const float w);
 t_vec4				vec4_add(const t_vec4 a, const t_vec4 b);
 t_vec4				vec4_addf(const t_vec4 a, const float b);
 t_vec4				vec4_sub(const t_vec4 a, const t_vec4 b);
@@ -60,6 +61,9 @@ t_vec4				*vec4_rotate_x(t_vec4 *a, const float theta);
 t_vec4				*vec4_rotate_y(t_vec4 *a, const float theta);
 t_vec4				*vec4_rotate_z(t_vec4 *a, const float theta);
 
+/*
+** Vec3
+*/
 
 t_vec3				vec3_set(const float x, const float y, const float z);
 t_vec3				vec3_add(const t_vec3 a, const t_vec3 b);
