@@ -58,6 +58,8 @@ set(SRCS_MAT4
 	${SRCS_MAT4_PATH}/mat4_transpose.c
 	${SRCS_MAT4_PATH}/mat4_cpy.c)
 
+set(INCS inc/)
+
 include_directories(inc/)
 
 add_library(mat	${SRCS_UTILS} ${SRCS_VEC3} ${SRCS_VEC4} ${SRCS_MAT4} ${INCS})
